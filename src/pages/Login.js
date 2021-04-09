@@ -23,12 +23,7 @@ export default function Login() {
 
   return (
     <main className="Login">
-        <header>
-            COUCOU
-        </header>
-        <section>
-            COUCOU
-        </section>
+        LOGIN
     </main>
   );
 }

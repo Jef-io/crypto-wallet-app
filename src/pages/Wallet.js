@@ -4,7 +4,7 @@ export default function Wallet () {
 
   return (
     <main className="Wallet">
-        COUCOU
+        WALLET
     </main>
   );
 }

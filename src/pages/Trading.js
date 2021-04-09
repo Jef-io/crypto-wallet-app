@@ -4,7 +4,7 @@ export default function Trading () {
 
   return (
     <main className="Trading">
-        COUCOU
+        TRADING
     </main>
   );
 }

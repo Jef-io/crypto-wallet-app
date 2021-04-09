@@ -4,7 +4,7 @@ export default function Cryptos () {
 
   return (
     <main className="Cryptos">
-        COUCOU
+        CRYPTOS
     </main>
   );
 }

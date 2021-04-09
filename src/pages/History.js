@@ -4,7 +4,7 @@ export default function History () {
 
   return (
     <main className="History">
-        COUCOU
+        HISTORY
     </main>
   );
 }
