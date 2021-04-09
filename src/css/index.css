@@ -2,9 +2,7 @@
 
 body {
     font-family: 'Overpass', sans-serif;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
+    margin: 4vh 4vw;
 }
 
 .NavBar {
@@ -12,7 +10,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 4vh 4vw;
 }
 
 .NavBar .MenuItems {
@@ -28,4 +25,8 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: black;
+}
+
+h2 {
+    text-transform: uppercase;
 }

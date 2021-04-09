@@ -8,26 +8,26 @@ const NavBar = () => {
 
     const routes = [
         {
-            to: "/",
-            name: "Portefeuille"
-        },
-        {
-            to: "/history",
-            name: "Historique"
-        },
-        {
             to: "/cryptos",
-            name: "Cryptos"
+            name: "Mes cryptos"
+        },
+        {
+            to: "/",
+            name: "Mon portefeuille"
         },
         {
             to: "/trading",
             name: "Transactions"
+        },
+        {
+            to: "/history",
+            name: "Historique"
         }
     ]
 
     return (
         <nav className="NavBar">
-            <IconButton aria-label="logout">
+            <IconButton color="secondary" aria-label="logout">
                 <PowerSettingsNewIcon fontSize="large"/>
             </IconButton>
             <div className="MenuItems">
