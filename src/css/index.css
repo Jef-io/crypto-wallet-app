@@ -10,6 +10,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 5vh;
 }
 
 .NavBar .MenuItems {
@@ -27,6 +28,36 @@ body {
     color: black;
 }
 
-h2 {
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 90%;
+    align-self: center;
+}
+
+h1, h2 {
     text-transform: uppercase;
+    font-size: 6em;
+    margin: 0;
+    margin-bottom: -5.5vh;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+table, th, td {
+    border: 2px solid #1294ea;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 2vh 2vw;
 }
