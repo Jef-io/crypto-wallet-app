@@ -1,6 +1,8 @@
 import {
     NavLink
 } from "react-router-dom"
+import IconButton from '@material-ui/core/IconButton';
+import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 
 const NavBar = () => {
 
@@ -25,13 +27,18 @@ const NavBar = () => {
 
     return (
         <nav className="NavBar">
-            {
-                routes.map((item, id) => 
-                    <NavLink key={id} to={item.to} exact activeClassName="SelectedNavLink">
-                        <h3>{item.name}</h3>
-                    </NavLink>
-                )
-            }
+            <IconButton aria-label="logout">
+                <PowerSettingsNewIcon fontSize="large"/>
+            </IconButton>
+            <div className="MenuItems">
+                {
+                    routes.map((item, id) => 
+                        <NavLink key={id} to={item.to} exact activeClassName="SelectedNavLink">
+                            {item.name}
+                        </NavLink>
+                    )
+                }
+            </div>
         </nav>
     )
 }
