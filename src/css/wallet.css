@@ -1,11 +1,3 @@
-.Wallet header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    align-self: center;
-}
-
 .Wallet h4 {
     font-size: 2em;
     font-weight: bold;
@@ -13,7 +5,11 @@
     margin-left: 1vw;
 }
 
-.WalletEvolution {
+.Wallet section:last-of-type {
+    margin-top: 5vh;
+}
+
+.Wallet section:last-of-type>div {
     width: fit-content;
     display: flex;
     flex-direction: column;
@@ -21,16 +17,10 @@
     padding: 0;
 }
 
-.Wallet h2:last-of-type {
-    margin-top: 8vh;
-    margin-bottom: -4vh;
-}
-
 .Wallet h3 {
-    position: relative;
     font-size: 1.8em;
     text-transform: uppercase;
-    margin-right: 0;
     align-self: flex-end;
-    z-index: 5;
+    z-index: 13;
+    transform: translate(-2%,-50%);
 }
