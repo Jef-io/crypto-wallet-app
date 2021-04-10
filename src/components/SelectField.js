@@ -4,20 +4,8 @@ import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-
-const blueTheme = createMuiTheme ({
-    palette: {
-      primary: {
-        light: '#41a9ee',
-        main: '#1294ea',
-        dark: '#0c67a3'
-      },
-      contrastThreshold: 3,
-      tonalOffset: 0.2,
-    }
-});
+import { BlueTheme } from '../css/CustomTheme'
 
 export default function SelectField ({label, options, onChange}) {
 
@@ -29,7 +17,7 @@ export default function SelectField ({label, options, onChange}) {
     };
 
     return (
-        <ThemeProvider theme={blueTheme}>
+        <ThemeProvider theme={BlueTheme}>
             <FormControl variant="filled" className="SelectField" color="primary">
                 <InputLabel htmlFor="select" color="primary">{label}</InputLabel>
                 <Select

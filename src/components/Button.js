@@ -1,19 +1,7 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
-
-const blueTheme = createMuiTheme ({
-    palette: {
-      primary: {
-        light: '#41a9ee',
-        main: '#1294ea',
-        dark: '#0c67a3'
-      },
-      contrastThreshold: 3,
-      tonalOffset: 0.2,
-    }
-});
+import { BlueTheme } from '../css/CustomTheme'
 
 export default function CustomizedButton ({color, value, onClick, className, isDisabled}) {
 
@@ -28,7 +16,7 @@ export default function CustomizedButton ({color, value, onClick, className, isD
 
   return (
     checkColor === "blue" ?
-        <ThemeProvider theme={blueTheme}>
+        <ThemeProvider theme={BlueTheme}>
             <Button 
                 onClick={() => onClick ? onClick() : null} 
                 style={style} 
