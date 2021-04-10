@@ -21,14 +21,16 @@
     padding: 0;
 }
 
-.Wallet h2 {
+.Wallet h2:last-of-type {
     margin-top: 8vh;
-    margin-bottom: -8vh;
+    margin-bottom: -4vh;
 }
 
 .Wallet h3 {
-   font-size: 1.8em;
-   text-transform: uppercase;
-   margin-right: 0;
-   align-self: flex-end;
+    position: relative;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    margin-right: 0;
+    align-self: flex-end;
+    z-index: 5;
 }

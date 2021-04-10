@@ -28,21 +28,36 @@ body {
     color: black;
 }
 
+.SelectedNavLinkRed {
+    border-bottom: solid 5px #db2b2b;
+}
+.SelectedNavLinkGreen {
+    border-bottom: solid 5px #76cc4a;
+}
+
+.SelectedNavLinkBlue {
+    border-bottom: solid 5px #1294ea;
+}
+
 main {
     display: flex;
     flex-direction: column;
 }
 
 section {
+    position: relative;
     width: 90%;
     align-self: center;
+    z-index: 5;
 }
 
 h1, h2 {
+    position: relative;
     text-transform: uppercase;
     font-size: 6em;
     margin: 0;
-    margin-bottom: -5.5vh;
+    transform: translateY(35%);
+    z-index: 0;
 }
 
 table {

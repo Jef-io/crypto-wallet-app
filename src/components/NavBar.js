@@ -9,19 +9,23 @@ const NavBar = () => {
     const routes = [
         {
             to: "/cryptos",
-            name: "Mes cryptos"
+            name: "Mes cryptos",
+            color: "Green"
         },
         {
             to: "/",
-            name: "Mon portefeuille"
+            name: "Mon portefeuille",
+            color: "Blue"
         },
         {
             to: "/trading",
-            name: "Transactions"
+            name: "Transactions",
+            color: "Red"
         },
         {
             to: "/history",
-            name: "Historique"
+            name: "Historique",
+            color: "Blue"
         }
     ]
 
@@ -33,7 +37,7 @@ const NavBar = () => {
             <div className="MenuItems">
                 {
                     routes.map((item, id) => 
-                        <NavLink key={id} to={item.to} exact activeClassName="SelectedNavLink">
+                        <NavLink key={id} to={item.to} exact activeClassName={`SelectedNavLink${item.color}`}>
                             {item.name}
                         </NavLink>
                     )
