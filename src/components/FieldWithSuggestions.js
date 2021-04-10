@@ -9,7 +9,7 @@ import { ThemeProvider } from '@material-ui/styles'
 import { BlueTheme } from '../css/CustomTheme'
 import TextField from '@material-ui/core/TextField';
 
-const SearchBar = ({label,suggestions}) => {
+const FieldWithSuggestions = ({label,suggestions}) => {
 
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [open, setOpen] = useState(false);
@@ -72,4 +72,4 @@ const SearchBar = ({label,suggestions}) => {
     </ThemeProvider>
   )
 }
-export default SearchBar;
+export default FieldWithSuggestions

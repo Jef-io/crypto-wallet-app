@@ -17,11 +17,6 @@ export default function SelectField ({label, options, onChange}) {
         if (onChange) onChange(event);
     };
 
-    const style = {
-        // backgroundColor: "white",
-        // border : "1px solid #41a9ee",
-    }
-
     return (
         <ThemeProvider theme={BlueTheme}>
             <FormControl variant="filled" className="SelectField" color="primary">
@@ -37,7 +32,6 @@ export default function SelectField ({label, options, onChange}) {
                         id: "select",
                     }}
                     disableUnderline
-                    style={style}
                     required
                 >
                     <option aria-label="None" value="" />

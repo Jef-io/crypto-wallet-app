@@ -3,15 +3,14 @@ import React from 'react';
 import TextFieldEuros from './TextFieldEuros'
 import BasicTextField from './TextField'
 import CustomizedButton from './Button'
-import SelectField from './SelectField'
-import SearchBar from './SearchBar'
+import FieldWithSuggestions from './FieldWithSuggestions'
 
-export default function Deal ({buttonName, buttonColor}) {
+export default function FieldWithSuggestions ({buttonName, buttonColor}) {
 
     return (
         <article>
             <form>
-                <SearchBar 
+                <FieldWithSuggestions 
                     label="Crypto" 
                     suggestions = {['BTC','DOGE']}
                 />
