@@ -5,7 +5,7 @@ import BasicTextField from './TextField'
 import CustomizedButton from './Button'
 import FieldWithSuggestions from './FieldWithSuggestions'
 
-export default function FieldWithSuggestions ({buttonName, buttonColor}) {
+export default function Deal ({buttonName, buttonColor}) {
 
     return (
         <article>

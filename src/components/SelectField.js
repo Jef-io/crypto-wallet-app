@@ -6,7 +6,6 @@ import Select from "@material-ui/core/Select";
 
 import { ThemeProvider } from '@material-ui/styles';
 import { BlueTheme } from '../css/CustomTheme'
-import { Opacity } from "@material-ui/icons";
 
 export default function SelectField ({label, options, onChange}) {
 
