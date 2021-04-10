@@ -13,7 +13,7 @@ import History from './pages/History'
 import Cryptos from './pages/Cryptos'
 import Trading from './pages/Trading'
 
-import customTheme from './css/CustomTheme';
+import greenRedTheme from './css/CustomTheme';
 import { ThemeProvider } from '@material-ui/styles';
 
 const App = () => {
@@ -48,7 +48,7 @@ const PrivateRoute = ({children}) => {
         // sessionStorage.getItem('authorization') ?
         true ?
         <Route>
-            <ThemeProvider theme={customTheme}>
+            <ThemeProvider theme={greenRedTheme}>
                 <NavBar />
                 {children}
             </ThemeProvider>

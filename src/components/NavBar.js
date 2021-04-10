@@ -8,32 +8,36 @@ const NavBar = () => {
 
     const routes = [
         {
-            to: "/",
-            name: "Portefeuille"
-        },
-        {
-            to: "/history",
-            name: "Historique"
-        },
-        {
             to: "/cryptos",
-            name: "Cryptos"
+            name: "Mes cryptos",
+            color: "Green"
+        },
+        {
+            to: "/",
+            name: "Mon portefeuille",
+            color: "Blue"
         },
         {
             to: "/trading",
-            name: "Transactions"
+            name: "Transactions",
+            color: "Red"
+        },
+        {
+            to: "/history",
+            name: "Historique",
+            color: "Blue"
         }
     ]
 
     return (
         <nav className="NavBar">
-            <IconButton aria-label="logout">
+            <IconButton color="secondary" aria-label="logout">
                 <PowerSettingsNewIcon fontSize="large"/>
             </IconButton>
             <div className="MenuItems">
                 {
                     routes.map((item, id) => 
-                        <NavLink key={id} to={item.to} exact activeClassName="SelectedNavLink">
+                        <NavLink key={id} to={item.to} exact activeClassName={`SelectedNavLink${item.color}`}>
                             {item.name}
                         </NavLink>
                     )

@@ -2,9 +2,7 @@
 
 body {
     font-family: 'Overpass', sans-serif;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
+    margin: 4vh 4vw;
 }
 
 .NavBar {
@@ -12,7 +10,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 4vh 4vw;
+    margin-bottom: 5vh;
 }
 
 .NavBar .MenuItems {
@@ -28,4 +26,53 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: black;
+}
+
+.SelectedNavLinkRed {
+    border-bottom: solid 5px #db2b2b;
+}
+.SelectedNavLinkGreen {
+    border-bottom: solid 5px #76cc4a;
+}
+
+.SelectedNavLinkBlue {
+    border-bottom: solid 5px #1294ea;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    position: relative;
+    width: 90%;
+    align-self: center;
+    z-index: 5;
+}
+
+h1, h2 {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 6em;
+    margin: 0;
+    transform: translateY(35%);
+    z-index: 0;
+}
+
+table {
+    width: 100%;
+    background-color: white;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+table, th, td {
+    border: 2px solid #1294ea;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 2vh 2vw;
 }
