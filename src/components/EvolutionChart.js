@@ -16,7 +16,7 @@ import { scalePoint } from 'd3-scale';
 
 const values = [
     {
-      date: 'hier', portefeuille: 60, btc: 937.6, doge: 582,
+        date: 'hier', portefeuille: 60, doge: 582,
     }, {
         date: 'ajd', portefeuille: 30, btc: 300, doge: 800,
     }, {
