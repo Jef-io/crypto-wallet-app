@@ -26,11 +26,13 @@ body {
     font-weight: bold;
     text-decoration: none;
     color: black;
+    padding-bottom: 2vh;
 }
 
 .SelectedNavLinkRed {
     border-bottom: solid 5px #db2b2b;
 }
+
 .SelectedNavLinkGreen {
     border-bottom: solid 5px #76cc4a;
 }
