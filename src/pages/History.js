@@ -7,11 +7,12 @@ export default function History () {
 
   return (
     <main className="History">
-        <Title value="Historique" variant="1"/>
         <section>
-          <TabHistory/>
+          <Title value="Historique" variant="1"/>
+          <article>
+            <TabHistory/>
+          </article>
         </section>
-        
     </main>
   );
 }

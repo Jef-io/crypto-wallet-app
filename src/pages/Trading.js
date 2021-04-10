@@ -11,12 +11,14 @@ export default function Trading () {
           <label>Montant total du portefeuille en euros : </label>
           <h4>110000000 €</h4>
         </header>
-
-        <Title value="Acheter" variant="2" color="#e25555"/>
-        <Deal buttonName="Acheter" buttonColor="secondary"/>
-     
-        <Title value="Vendre" variant="2" color="#91d66e"/>
-        <Deal buttonName="Vendre" buttonColor="primary"/>
+        <section>
+          <Title value="Acheter" variant="2" color="#e25555"/>
+          <Deal buttonName="Acheter" buttonColor="secondary"/>
+        </section>
+        <section>
+          <Title value="Vendre" variant="2" color="#91d66e"/>
+          <Deal buttonName="Vendre" buttonColor="primary"/>
+        </section>
     </main>
   );
 }

@@ -1,12 +1,3 @@
-.Trading header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;
-    align-self: center;
-    margin-bottom: 2vh;
-}
-
 .Trading h4 {
     font-size: 2em;
     font-weight: bold;
@@ -25,6 +16,6 @@
     background-color: white;
 }
 
-.Trading section {
+/* .Trading section {
     margin-bottom: 10vh;
-}
+} */

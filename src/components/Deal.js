@@ -8,7 +8,7 @@ import SelectField from './SelectField'
 export default function Deal ({buttonName, buttonColor}) {
 
     return (
-        <section>
+        <article>
             <form>
                 <SelectField 
                     label="Crypto" 
@@ -18,6 +18,6 @@ export default function Deal ({buttonName, buttonColor}) {
                 <TextFieldEuros/>
                 <CustomizedButton value={buttonName} color={buttonColor}/>
             </form> 
-        </section>
+        </article>
     );
 }
