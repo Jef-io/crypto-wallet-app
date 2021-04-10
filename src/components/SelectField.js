@@ -6,6 +6,7 @@ import Select from "@material-ui/core/Select";
 
 import { ThemeProvider } from '@material-ui/styles';
 import { BlueTheme } from '../css/CustomTheme'
+import { Opacity } from "@material-ui/icons";
 
 export default function SelectField ({label, options, onChange}) {
 
@@ -15,6 +16,11 @@ export default function SelectField ({label, options, onChange}) {
         setOption(event.target.value);
         if (onChange) onChange(event);
     };
+
+    const style = {
+        // backgroundColor: "white",
+        // border : "1px solid #41a9ee",
+    }
 
     return (
         <ThemeProvider theme={BlueTheme}>
@@ -30,6 +36,9 @@ export default function SelectField ({label, options, onChange}) {
                         name: {label},
                         id: "select",
                     }}
+                    disableUnderline
+                    style={style}
+                    required
                 >
                     <option aria-label="None" value="" />
                     {options.map((option, id) => (

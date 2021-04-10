@@ -4,15 +4,16 @@ import TextFieldEuros from './TextFieldEuros'
 import BasicTextField from './TextField'
 import CustomizedButton from './Button'
 import SelectField from './SelectField'
+import SearchBar from './SearchBar'
 
 export default function Deal ({buttonName, buttonColor}) {
 
     return (
         <article>
             <form>
-                <SelectField 
+                <SearchBar 
                     label="Crypto" 
-                    options = {['BTC','DOGE']}
+                    suggestions = {['BTC','DOGE']}
                 />
                 <BasicTextField label="Montant"/>
                 <TextFieldEuros/>
