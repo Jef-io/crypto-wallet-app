@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const greenRedTheme = createMuiTheme ({
+const GreenRedTheme = createMuiTheme ({
   palette: {
     primary: {
         light: '#91d66e',
@@ -17,4 +17,19 @@ const greenRedTheme = createMuiTheme ({
   }
 });
 
-export default greenRedTheme ;
+const BlueTheme = createMuiTheme ({
+  palette: {
+    primary: {
+      light: '#41a9ee',
+      main: '#1294ea',
+      dark: '#0c67a3'
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+  }
+});
+
+export {
+  GreenRedTheme,
+  BlueTheme
+} ;
