@@ -12,6 +12,7 @@ import Wallet from './pages/Wallet'
 import History from './pages/History'
 import Cryptos from './pages/Cryptos'
 import Trading from './pages/Trading'
+import AddCryptos from './pages/AddCryptos'
 
 import { GreenRedTheme } from './css/CustomTheme';
 import { ThemeProvider } from '@material-ui/styles';
@@ -36,6 +37,9 @@ const App = () => {
                     </PrivateRoute>
                     <PrivateRoute path="/trading">
                         <Trading />
+                    </PrivateRoute>
+                    <PrivateRoute path="/addcrypto">
+                        <AddCryptos />
                     </PrivateRoute>
                 </Switch>
             </Router>

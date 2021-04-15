@@ -4,24 +4,11 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import DeleteIcon from '@material-ui/icons/Delete'
 import CancelIcon from '@material-ui/icons/Cancel';
 
-export default function TabCryptos () {
+export default function TabCryptos ({
+    cryptosList
+}) {
 
-    const cryptos = [
-        {
-            name:'BTC',
-            cours:'58 251,11 $US',
-            jour:'0.9%',
-            semaine:'-0.9%',
-            owned:'2',
-        },
-        {
-            name:'DOGE',
-            cours:'0,061378 $US',
-            jour:'0.5%',
-            semaine:'-0.3%',
-            owned:'0',
-        }
-    ]
+    const cryptos = cryptosList ? cryptosList : [];
 
     return (
         <table className="TabCryptos">
@@ -30,23 +17,22 @@ export default function TabCryptos () {
                     <th>Crypto</th>
                     <th>Cours</th>
                     <th>24 heures</th>
-                    <th>7 jours</th>
-                    <th>Possédées</th>
+                    {/* a voir si quantité ou bool */}
+                    <th>Possédée</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {cryptos.map((crypto) => (
                     <tr>
-                        <td>{crypto.name}</td>
-                        <td>{crypto.cours}</td>
-                        <td>{crypto.jour}</td>
-                        <td>{crypto.semaine}</td>
-                        { crypto.owned === '0' ?
-                            <td><CancelIcon fontSize="large" color="secondary"/></td>
+                        <td>{crypto.id}</td>
+                        <td>{crypto.current_price} €</td>
+                        <td>{crypto.market_cap_change_percentage_24h}</td>
+                        <td><CancelIcon fontSize="large" color="secondary"/></td>
+                        {/* { crypto.owned === '0' ?
                         :
                             <td>{crypto.owned}</td>
-                        }
+                        } */}
                         <td>
                             <IconButton color="primary" aria-label="shop">
                                 <ShoppingCartIcon fontSize="large"/>
