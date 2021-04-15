@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/history.css';
 import Title from '../components/Title';
-import TabHistory from '../components/TabHistory';
+import TabHistory from '../components/tabs/TabHistory';
 
 export default function History () {
 

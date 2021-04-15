@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TextFieldEuros from './TextFieldEuros'
-import BasicTextField from './TextField'
+import TextFieldEuros from './fields/TextFieldEuros'
+import BasicTextField from './fields/TextField'
 import CustomizedButton from './Button'
-import FieldWithSuggestions from './FieldWithSuggestions'
+import FieldWithSuggestions from './fields/FieldWithSuggestions'
 
 export default function Deal ({buttonName, buttonColor}) {
 

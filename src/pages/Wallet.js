@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/wallet.css';
 import Title from '../components/Title';
-import TabWallet from '../components/TabWallet';
+import TabWallet from '../components/tabs/TabWallet';
 import EvolutionChart from '../components/EvolutionChart';
 
 export default function Wallet () {

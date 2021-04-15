@@ -5,7 +5,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 import { ThemeProvider } from '@material-ui/styles';
-import { BlueTheme } from '../css/CustomTheme'
+import { BlueTheme } from '../../css/CustomTheme'
 
 export default function SelectField ({label, options, onChange}) {
 

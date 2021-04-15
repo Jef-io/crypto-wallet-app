@@ -6,7 +6,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { ThemeProvider } from '@material-ui/styles'
-import { BlueTheme } from '../css/CustomTheme'
+import { BlueTheme } from '../../css/CustomTheme'
 import TextField from '@material-ui/core/TextField';
 
 const FieldWithSuggestions = ({label,suggestions}) => {

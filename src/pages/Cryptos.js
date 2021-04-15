@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/cryptos.css';
 import Title from '../components/Title';
-import TabCryptos from '../components/TabCryptos';
+import TabCryptos from '../components/tabs/TabCryptos';
 import CustomizedButton from '../components/Button';
 
 export default function Cryptos () {

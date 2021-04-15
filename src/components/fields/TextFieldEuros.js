@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ThemeProvider } from '@material-ui/styles';
-import { BlueTheme } from '../css/CustomTheme'
+import { BlueTheme } from '../../css/CustomTheme'
 
 
 import InputLabel from "@material-ui/core/InputLabel";
