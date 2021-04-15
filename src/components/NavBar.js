@@ -9,7 +9,7 @@ const NavBar = () => {
     const routes = [
         {
             to: "/cryptos",
-            name: "Mes cryptos",
+            name: "Mes cryptos suivies",
             color: "Green"
         },
         {

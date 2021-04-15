@@ -28,19 +28,16 @@ useEffect(() => {
   
   return (
     <main className="Cryptos">
-        <section>
-          <Title value="Cryptos" variant="1"/>
-          <article>
-            <TabFollowedCryptos cryptosList={cryptos}/>
-          </article>
-        </section>
-        <section>
-          <article>
-            <Link to={'/addcrypto'}>
-              <CustomizedButton value="ajouter une cryptomonnaie" color="blue"/>
-            </Link>
-          </article>
-        </section>
+      <header>
+        <div></div>
+        <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
+      </header>
+      <section>
+        <Title value="Cryptos" variant="1"/>
+        <article>
+          <TabFollowedCryptos cryptosList={cryptos}/>
+        </article>
+      </section>
     </main>
   );
 }

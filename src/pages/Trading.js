@@ -8,8 +8,10 @@ export default function Trading () {
   return (
     <main className="Trading">
         <header>
-          <label>Montant total du portefeuille en euros : </label>
-          <h4>110000000 €</h4>
+          <div>
+            <label>Montant total du portefeuille en euros : </label>
+            <h4>110000000 €</h4>
+          </div>
         </header>
         <section>
           <Title value="Acheter" variant="2" color="#e25555"/>

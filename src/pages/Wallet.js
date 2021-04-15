@@ -3,14 +3,18 @@ import '../css/wallet.css';
 import Title from '../components/Title';
 import TabWallet from '../components/tabs/TabWallet';
 import EvolutionChart from '../components/EvolutionChart';
+import CustomizedButton from '../components/Button'
 
 export default function Wallet () {
 
   return (
     <main className="Wallet">
         <header>
-          <label>Montant total du portefeuille en euros : </label>
-          <h4>110000000 €</h4>
+          <div>
+            <label>Montant total du portefeuille en euros : </label>
+            <h4>110000000 €</h4>
+          </div>
+          <CustomizedButton value="ajouter une cryptomonnaie" color="blue"/>
         </header>
         <section>
           <Title value="Portefeuille" variant="1"/>
