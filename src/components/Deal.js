@@ -3,16 +3,16 @@ import React from 'react';
 import TextFieldEuros from './TextFieldEuros'
 import BasicTextField from './TextField'
 import CustomizedButton from './Button'
-import SelectField from './SelectField'
+import FieldWithSuggestions from './FieldWithSuggestions'
 
 export default function Deal ({buttonName, buttonColor}) {
 
     return (
         <article>
             <form>
-                <SelectField 
+                <FieldWithSuggestions 
                     label="Crypto" 
-                    options = {['BTC','DOGE']}
+                    suggestions = {['BTC','DOGE']}
                 />
                 <BasicTextField label="Montant"/>
                 <TextFieldEuros/>

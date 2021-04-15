@@ -30,6 +30,8 @@ export default function SelectField ({label, options, onChange}) {
                         name: {label},
                         id: "select",
                     }}
+                    disableUnderline
+                    required
                 >
                     <option aria-label="None" value="" />
                     {options.map((option, id) => (

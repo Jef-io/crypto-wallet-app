@@ -8,7 +8,7 @@ export default function BasicTextField ({label}) {
 
   return (
     <ThemeProvider theme={BlueTheme}>
-      <TextField color="primary" label={label} variant="filled" />
-      </ThemeProvider>
+      <TextField color="primary" label={label} variant="filled" disableUnderline required/>
+    </ThemeProvider>
   );
 }
