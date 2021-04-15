@@ -81,9 +81,16 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 90%;
     align-self: center;
     margin-bottom: -5vh;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 ::-webkit-scrollbar {

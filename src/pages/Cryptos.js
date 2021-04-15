@@ -8,13 +8,17 @@ export default function Cryptos () {
 
   return (
     <main className="Cryptos">
-        <section>
-          <Title value="Cryptos" variant="1"/>
-          <article>
-            <TabCryptos/>
-            <CustomizedButton value="ajouter une cryptomonnaie" color="blue"/>
-          </article>
-        </section>
+      <header>
+        <div></div>
+        <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
+      </header>
+      <section>
+        <Title value="Cryptos" variant="1"/>
+        <article>
+          <TabCryptos/>
+          <CustomizedButton value="ajouter une cryptomonnaie" color="blue"/>
+        </article>
+      </section>
     </main>
   );
 }
