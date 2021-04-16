@@ -44,7 +44,7 @@ const AddCryptosWallet = () => {
                 </Link>
                 <Title value="Ajouter une crypto" variant="1"/>
                 <article>
-                    <BasicTextField label='Rechercher...' className="SearchField" onChange={e => onUserSearch(e.target.value)}/>
+                    <BasicTextField label='Rechercher...' className="SearchField" onChange={e => onUserSearch(e.target.value)} color="blue"/>
                     <TabAddCryptosWallet cryptosList={filteredCryptos.length ? filteredCryptos : cryptos} addCrypto={id => addCrypto(id)}/>
                 </article>
             </section>
