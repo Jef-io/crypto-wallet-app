@@ -1,21 +1,22 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import BasicTextField from '../fields/TextField'
 
-export default function TabCryptos ({
+export default function TabAddCryptosWallet ({
     cryptosList,
     addCrypto
 }) {
 
-    const cryptos = cryptosList ? cryptosList : [];
+    // const cryptos = cryptosList ? cryptosList : [];
+    const cryptos = [{id:'btc'},{id:'doge'}];
 
     return (
         <table className="TabCryptos">
             <thead>
                 <tr>
                     <th>Crypto</th>
-                    <th>Cours</th>
-                    <th>24 heures</th>
+                    <th>Montant</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -23,8 +24,7 @@ export default function TabCryptos ({
                 {cryptos.map((crypto) => (
                     <tr>
                         <td>{crypto.id}</td>
-                        <td>{crypto.current_price} €</td>
-                        <td>{crypto.market_cap_change_percentage_24h} %</td>
+                        <td><BasicTextField type="number" defaultValue="1" required/></td>
                         <td>
                             <IconButton color="primary" aria-label="shop" onClick={() => addCrypto(crypto.id)}>
                                 <AddCircleIcon fontSize="large"/>

@@ -7,7 +7,9 @@ import MenuList from '@material-ui/core/MenuList';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import { ThemeProvider } from '@material-ui/styles'
 import { BlueTheme } from '../../css/CustomTheme'
-import TextField from '@material-ui/core/TextField';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 const FieldWithSuggestions = ({label,suggestions}) => {
 
@@ -33,17 +35,22 @@ const FieldWithSuggestions = ({label,suggestions}) => {
 
   return (
     <ThemeProvider theme={BlueTheme}>
-      <TextField 
-        color="primary" 
-        label={label} 
-        variant="filled" 
-        disableUnderline 
-        required
-        ref={anchorRef}
-        aria-controls={open ? "menu-list-grow" : undefined}
-        aria-haspopup="true"
-        onChange={(e) => onUserInput(e.target.value)}
-      />
+      <FormControl variant="outlined">
+          <OutlinedInput
+            color="primary"
+            id="outlined"
+            aria-describedby="outlined-helper-text"
+            inputProps={{
+              'aria-label': {label},
+            }}
+            // labelWidth={0}
+            ref={anchorRef}
+            aria-controls={open ? "menu-list-grow" : undefined}
+            aria-haspopup="true"
+            onChange={(e) => onUserInput(e.target.value)}
+          />
+          <FormHelperText id="outlined-helper-text">{label}</FormHelperText>
+      </FormControl>
       <Popper 
         open={open} 
         anchorEl={anchorRef.current} 
