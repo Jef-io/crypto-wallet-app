@@ -26,6 +26,11 @@
     transform: translate(-2%,-50%);
 }
 
-.Wallet .Field {
-    width: 100%;
+.Wallet td {
+    padding: 2vh 2vw;
 }
+
+.Wallet .Field {
+    width: 90%;
+}
+

@@ -93,6 +93,24 @@ header div {
     align-items: center;
 }
 
+.Link {
+    text-decoration: none;
+}
+
+.Link>* {
+    width: 20vw;
+}
+
+.SearchField {
+    width: 100%;
+    background-color: #fff;
+    z-index: 13;
+}
+
+.AddCryptos table {
+    margin-top: 5vh;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;

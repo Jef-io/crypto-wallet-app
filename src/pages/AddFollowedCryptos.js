@@ -43,10 +43,10 @@ const AddFollowedCryptos = () => {
     }
     
     return (
-        <main className="Cryptos">
+        <main className="Cryptos AddCryptos">
             <section>
-                <Link to={'/cryptos'}>
-                <CustomizedButton value="Retour" color="blue"/>
+                <Link to={'/cryptos'} className="Link">
+                    <CustomizedButton value="Retour" color="blue"/>
                 </Link>
                 <Title value="Suivre une crypto" variant="1"/>
                 <article>

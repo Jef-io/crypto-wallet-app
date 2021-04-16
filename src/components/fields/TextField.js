@@ -9,13 +9,13 @@ import { BlueTheme } from '../../css/CustomTheme'
 export default function BasicTextField ({label, required, className, onChange, color, type, defaultValue}) {
 
   const checkColor = color ? color : "primary" ;
+  const checkClassName = className ? className : "Field" ;
 
   return (
     checkColor === "blue" ?
       <ThemeProvider theme={BlueTheme}>
-        <FormControl className={className ?? "Field"} variant="outlined">
+        <FormControl className={checkClassName} variant="outlined" color="primary">
           <OutlinedInput
-            color="primary"
             id="outlined"
             onChange={onChange ? e =>  onChange(e) : null}
             aria-describedby="outlined-helper-text"
@@ -25,8 +25,8 @@ export default function BasicTextField ({label, required, className, onChange, c
             required={required ?? false}
             type={type}
             defaultValue={defaultValue}
-            notched
-            fullWidth
+             // notched
+            fullWidth="true"
           />
           {label ?
             <FormHelperText id="outlined-helper-text">{label}</FormHelperText>
@@ -34,9 +34,8 @@ export default function BasicTextField ({label, required, className, onChange, c
         </FormControl>
       </ThemeProvider>
     : 
-      <FormControl className={className ?? "Field"} variant="outlined">
+      <FormControl className={checkClassName} variant="outlined" color="primary">
         <OutlinedInput
-          color="primary"
           id="outlined"
           onChange={onChange ? e =>  onChange(e) : null}
           aria-describedby="outlined-helper-text"
@@ -46,8 +45,8 @@ export default function BasicTextField ({label, required, className, onChange, c
           required={required ?? false}
           type={type}
           defaultValue={defaultValue}
-          notched
-          fullWidth
+          // notched
+          fullWidth="true"
         />
         {label ?
           <FormHelperText id="outlined-helper-text">{label}</FormHelperText>

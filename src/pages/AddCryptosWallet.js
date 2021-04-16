@@ -37,10 +37,10 @@ const AddCryptosWallet = () => {
     }
     
     return (
-        <main className="Cryptos">
+        <main className="Wallet AddCryptos">
             <section>
-                <Link to={'/cryptos'}>
-                <CustomizedButton value="Retour" color="blue"/>
+                <Link to={'/'} className="Link">
+                    <CustomizedButton value="Retour" color="blue"/>
                 </Link>
                 <Title value="Ajouter une crypto" variant="1"/>
                 <article>

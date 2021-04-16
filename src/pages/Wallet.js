@@ -32,7 +32,7 @@ export default function Wallet () {
             <label>Montant total du portefeuille en euros : </label>
             <h4>110000000 €</h4>
           </div>
-          <Link to={'/addcryptoswallet'}>
+          <Link to={'/addcryptoswallet'} className="Link">
             <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
           </Link>
         </header>

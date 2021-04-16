@@ -34,7 +34,7 @@ export default function FollowedCryptos () {
   return (
     <main className="Cryptos">
       <header>
-        <Link to={'/addfollowedcryptos'}>
+        <Link to={'/addfollowedcryptos'} className="Link">
           <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
         </Link>
       </header>
