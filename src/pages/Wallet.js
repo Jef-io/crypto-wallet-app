@@ -4,6 +4,8 @@ import Title from '../components/Title';
 import TabWallet from '../components/tabs/TabWallet';
 import EvolutionChart from '../components/EvolutionChart';
 import CustomizedButton from '../components/Button'
+import { Link } from 'react-router-dom';
+
 
 import {
   getWallet
@@ -30,7 +32,9 @@ export default function Wallet () {
             <label>Montant total du portefeuille en euros : </label>
             <h4>110000000 €</h4>
           </div>
-          <CustomizedButton value="ajouter une cryptomonnaie" color="blue"/>
+          <Link to={'/addcryptoswallet'}>
+            <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
+          </Link>
         </header>
         <section>
           <Title value="Portefeuille" variant="1"/>

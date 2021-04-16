@@ -9,7 +9,7 @@ import {
   unfollowCrypto
 } from '../utils/followedCryptos'
 
-export default function Cryptos () {
+export default function FollowedCryptos () {
 
   const [cryptos, setCryptos] = useState([]);
 
@@ -34,8 +34,7 @@ export default function Cryptos () {
   return (
     <main className="Cryptos">
       <header>
-        <div></div>
-        <Link to={'/addcryptos'}>
+        <Link to={'/addfollowedcryptos'}>
           <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
         </Link>
       </header>
