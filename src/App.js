@@ -38,7 +38,7 @@ const App = () => {
                     <PrivateRoute path="/trading">
                         <Trading />
                     </PrivateRoute>
-                    <PrivateRoute path="/addcrypto">
+                    <PrivateRoute path="/addcryptos">
                         <AddCryptos />
                     </PrivateRoute>
                 </Switch>
