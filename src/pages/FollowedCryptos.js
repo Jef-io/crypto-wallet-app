@@ -5,7 +5,8 @@ import TabFollowedCryptos from '../components/tabs/TabFollowedCryptos';
 import CustomizedButton from '../components/Button';
 import { Link } from 'react-router-dom';
 import { 
-  getFollowedCryptos
+  getFollowedCryptos,
+  unfollowCrypto
 } from '../utils/followedCryptos'
 
 export default function FollowedCryptos () {
@@ -15,17 +16,21 @@ export default function FollowedCryptos () {
   const fetchCryptos = async () => {
     const result = await getFollowedCryptos();
     setCryptos(result);
-}
+  }
 
-useEffect(() => {
-    fetchCryptos();
-}, [])
+  const removeCrypto = async (id) => {
+    try {
+      await unfollowCrypto(id);
+      setCryptos(cryptos =>  cryptos.filter(crypto => crypto.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
+    fetchCryptos();
+  }, [])
 
-  })
-
-  
   return (
     <main className="Cryptos">
       <header>
@@ -36,7 +41,7 @@ useEffect(() => {
       <section>
         <Title value="Cryptos" variant="1"/>
         <article>
-          <TabFollowedCryptos cryptosList={cryptos}/>
+          <TabFollowedCryptos cryptosList={cryptos} unfollowCrypto={id => removeCrypto(id)}/>
         </article>
       </section>
     </main>

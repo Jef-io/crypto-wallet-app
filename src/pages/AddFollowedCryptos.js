@@ -6,7 +6,7 @@ import CustomizedButton from '../components/Button';
 import { Link } from 'react-router-dom';
 import { 
     getNotFollowedCryptos,
-    addFollowedCrypto
+    followCrypto
 } from '../utils/followedCryptos'
 import BasicTextField from '../components/fields/TextField'
 
@@ -33,7 +33,13 @@ const AddFollowedCryptos = () => {
     }
 
     const addCrypto = async (id) => {
-        await addFollowedCrypto(id);
+        try {
+            await followCrypto(id);
+            setCryptos(cryptos => cryptos.filter(crypto => crypto.id !== id));
+            setFilteredCryptos(filteredCryptos => filteredCryptos.filter(crypto => crypto.id !== id));
+        } catch (error) {
+            
+        }
     }
     
     return (

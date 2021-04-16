@@ -5,7 +5,8 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import CancelIcon from '@material-ui/icons/Cancel';
 
 export default function TabFollowedCryptos ({
-    cryptosList
+    cryptosList,
+    unfollowCrypto
 }) {
 
     const cryptos = cryptosList ? cryptosList : [];
@@ -37,7 +38,7 @@ export default function TabFollowedCryptos ({
                             <IconButton color="primary" aria-label="shop">
                                 <ShoppingCartIcon fontSize="large"/>
                             </IconButton>
-                            <IconButton color="secondary" aria-label="delete">
+                            <IconButton color="secondary" aria-label="delete" onClick={() => unfollowCrypto(crypto.id)}>
                                 <DeleteIcon fontSize="large"/>
                             </IconButton>
                         </td>

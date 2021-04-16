@@ -3,7 +3,9 @@ import IconButton from '@material-ui/core/IconButton'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
 
-export default function TabWallet () {
+export default function TabWallet ({
+    wallet
+}) {
 
     const cryptos = [
         {
@@ -26,12 +28,12 @@ export default function TabWallet () {
                 </tr>
             </thead>
             <tbody>
-                {cryptos.map((crypto) => (
+                {wallet.map((crypto) => (
                     <tr>
-                        <td>{crypto.name}</td>
-                        <td>{crypto.montant}</td>
-                        <td>{crypto.euros}</td>
-                        <td>{crypto.cours}</td>
+                        <td>{crypto.id}</td>
+                        <td>{crypto.held}</td>
+                        <td>{crypto.current_price} €</td>
+                        <td>{crypto.current_price*crypto.held} €</td>
                         <td>
                             <IconButton color="secondary" aria-label="shop">
                                 <AddCircleIcon fontSize="large"/>

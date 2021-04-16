@@ -31,7 +31,7 @@ const getNotFollowedCryptos = async () => {
     }
 }
 
-const addFollowedCrypto = async (cryptoId) => {
+const followCrypto = async (cryptoId) => {
     try {
         const result = await postRequest('follow/admin', {crypto_id: cryptoId});
         return result;
@@ -40,9 +40,19 @@ const addFollowedCrypto = async (cryptoId) => {
     }
 }
 
+const unfollowCrypto = async (cryptoId) => {
+    try {
+        const result = await deleteRequest(`follow/admin/${cryptoId}`);
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
+
 export {
     getCryptos,
-    addFollowedCrypto,
     getFollowedCryptos,
-    getNotFollowedCryptos
+    getNotFollowedCryptos,
+    followCrypto,
+    unfollowCrypto
 }
