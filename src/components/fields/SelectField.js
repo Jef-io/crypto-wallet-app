@@ -18,8 +18,7 @@ export default function SelectField ({label, options, onChange}) {
 
     return (
         <ThemeProvider theme={BlueTheme}>
-            <FormControl variant="filled" className="SelectField" color="primary">
-                <InputLabel htmlFor="select" color="primary">{label}</InputLabel>
+            <FormControl variant="outlined" className="SelectField" color="primary">
                 <Select
                     native
                     color="primary"
@@ -38,6 +37,7 @@ export default function SelectField ({label, options, onChange}) {
                             <option key={id} value={option}>{option}</option>
                     ))}
                 </Select>
+                <InputLabel htmlFor="select" color="primary">{label}</InputLabel>
             </FormControl>
         </ThemeProvider>
     );

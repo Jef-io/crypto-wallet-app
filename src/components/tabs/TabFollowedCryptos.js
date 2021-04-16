@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import DeleteIcon from '@material-ui/icons/Delete'
 import CancelIcon from '@material-ui/icons/Cancel';
 
-export default function TabCryptos ({
+export default function TabFollowedCryptos ({
     cryptosList
 }) {
 

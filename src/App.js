@@ -10,9 +10,10 @@ import NavBar from './components/NavBar'
 import Login from './pages/Login'
 import Wallet from './pages/Wallet'
 import History from './pages/History'
-import Cryptos from './pages/Cryptos'
+import FollowedCryptos from './pages/FollowedCryptos'
 import Trading from './pages/Trading'
-import AddCryptos from './pages/AddCryptos'
+import AddFollowedCryptos from './pages/AddFollowedCryptos'
+import AddCryptosWallet from './pages/AddCryptosWallet'
 
 import { GreenRedTheme } from './css/CustomTheme';
 import { ThemeProvider } from '@material-ui/styles';
@@ -33,13 +34,16 @@ const App = () => {
                         <History />
                     </PrivateRoute>
                     <PrivateRoute path="/cryptos">
-                        <Cryptos />
+                        <FollowedCryptos />
                     </PrivateRoute>
                     <PrivateRoute path="/trading">
                         <Trading />
                     </PrivateRoute>
-                    <PrivateRoute path="/addcrypto">
-                        <AddCryptos />
+                    <PrivateRoute path="/addfollowedcryptos">
+                        <AddFollowedCryptos />
+                    </PrivateRoute>
+                    <PrivateRoute path="/addcryptoswallet">
+                        <AddCryptosWallet />
                     </PrivateRoute>
                 </Switch>
             </Router>

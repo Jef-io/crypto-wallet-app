@@ -14,7 +14,7 @@ export default function Deal ({buttonName, buttonColor}) {
                     label="Crypto" 
                     suggestions = {['BTC','DOGE']}
                 />
-                <BasicTextField label="Montant" required/>
+                <BasicTextField label="Montant" type="number" defaultValue="1" color="blue" required/>
                 <TextFieldEuros/>
                 <CustomizedButton value={buttonName} color={buttonColor}/>
             </form> 

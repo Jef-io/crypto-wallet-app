@@ -8,7 +8,7 @@ import {
   getFollowedCryptos
 } from '../utils/followedCryptos'
 
-export default function Cryptos () {
+export default function FollowedCryptos () {
 
   const [cryptos, setCryptos] = useState([]);
 
@@ -29,8 +29,9 @@ useEffect(() => {
   return (
     <main className="Cryptos">
       <header>
-        <div></div>
-        <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
+        <Link to={'/addfollowedcryptos'}>
+          <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
+        </Link>
       </header>
       <section>
         <Title value="Cryptos" variant="1"/>
