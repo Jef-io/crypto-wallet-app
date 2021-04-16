@@ -6,7 +6,7 @@ import CustomizedButton from '../components/Button';
 import { Link } from 'react-router-dom';
 import { 
     getNotFollowedCryptos,
-    addFollowedCrypto
+    followCrypto
 } from '../utils/followedCryptos'
 import BasicTextField from '../components/fields/TextField'
 
@@ -33,7 +33,7 @@ const AddCryptosWallet = () => {
     }
 
     const addCrypto = async (id) => {
-        await addFollowedCrypto(id);
+        await followCrypto(id);
     }
     
     return (

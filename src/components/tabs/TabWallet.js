@@ -7,15 +7,6 @@ export default function TabWallet ({
     wallet
 }) {
 
-    const cryptos = [
-        {
-            name:'BTC',
-            montant: '2',
-            cours:'58 251,11 $US',
-            euros: '10 000'
-        }
-    ]
-
     return (
         <table className="TabCryptos">
             <thead>
