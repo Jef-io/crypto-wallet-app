@@ -1,7 +1,7 @@
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton'
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
+import IconButton from '../IconButton';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 
 export default function TabWallet ({
     wallet
@@ -19,18 +19,18 @@ export default function TabWallet ({
                 </tr>
             </thead>
             <tbody>
-                {wallet.map((crypto) => (
-                    <tr>
+                {wallet.map((crypto, id) => (
+                    <tr key={id}>
                         <td>{crypto.id}</td>
                         <td>{crypto.held}</td>
                         <td>{crypto.current_price} €</td>
                         <td>{crypto.current_price*crypto.held} €</td>
                         <td>
-                            <IconButton color="secondary" aria-label="shop">
-                                <AddCircleIcon fontSize="large"/>
+                            <IconButton color="secondary">
+                                <AddShoppingCartIcon fontSize="large"/>
                             </IconButton>
-                            <IconButton color="primary" aria-label="shop">
-                                <RemoveCircleIcon fontSize="large"/>
+                            <IconButton color="primary">
+                                <MonetizationOnIcon fontSize="large"/>
                             </IconButton>
                         </td>
                     </tr>
