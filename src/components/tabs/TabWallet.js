@@ -26,7 +26,7 @@ export default function TabWallet ({
                         <td>{crypto.current_price} €</td>
                         <td>{crypto.current_price*crypto.held} €</td>
                         <td>
-                            <IconButton color="secondary">
+                            <IconButton color="primary">
                                 <AddShoppingCartIcon fontSize="large"/>
                             </IconButton>
                             <IconButton color="primary">

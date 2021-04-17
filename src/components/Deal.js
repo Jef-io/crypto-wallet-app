@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-
 import TextFieldEuros from './fields/TextFieldEuros'
 import BasicTextField from './fields/TextField'
 import CustomizedButton from './Button'
@@ -12,7 +11,9 @@ export default function Deal ({buttonName, buttonColor, cryptos, isSelling, onVa
     const [value, setValue] = useState("")
 
     const handleChange = (value) => {
-        if (isSelling ? value >= 0 && value <= cryptos.find(value => value.id === crypto).held : value >= 0) setAmmount(value)
+        if (isSelling && crypto
+            ? value >= 0 && value <= cryptos.find(value => value.id === crypto).held 
+            : value >= 0) setAmmount(value)
     }
 
     useEffect(() => {

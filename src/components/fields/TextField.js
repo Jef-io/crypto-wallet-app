@@ -48,10 +48,13 @@ export default function BasicTextField ({label, required, className, onChange, c
           defaultValue={defaultValue}
           // notched
           fullWidth="true"
+          value={value}
         />
-        {label ?
-          <FormHelperText id="outlined-helper-text">{label}</FormHelperText>
-        : null}
+        {
+          label 
+          ? <FormHelperText id="outlined-helper-text">{label}</FormHelperText>
+          : null
+        }
       </FormControl>
   );
 }
