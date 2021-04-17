@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { 
   getFollowedCryptos,
   unfollowCrypto
-} from '../utils/followedCryptos'
+} from '../utils/cryptos'
 
 export default function FollowedCryptos () {
 
@@ -35,7 +35,7 @@ export default function FollowedCryptos () {
     <main className="Cryptos">
       <header>
         <Link to={'/addfollowedcryptos'} className="Link">
-          <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
+          <CustomizedButton value="Suivre une cryptomonnaie" color="blue"/>
         </Link>
       </header>
       <section>
