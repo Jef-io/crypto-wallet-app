@@ -11,6 +11,16 @@ export default function TabFollowedCryptos ({
 
     const cryptos = cryptosList ? cryptosList : [];
 
+    const textGreen = {
+        color:'#76cc4a',
+        fontWeight:'bold'
+    }
+
+    const textRed = {
+        color:'#db2b2b',
+        fontWeight:'bold'
+    }
+
     return (
         <table className="TabCryptos">
             <thead>
@@ -24,16 +34,18 @@ export default function TabFollowedCryptos ({
                 </tr>
             </thead>
             <tbody>
-                {cryptos.map((crypto) => (
-                    <tr>
+                {cryptos.map((crypto, id) => (
+                    <tr key={id}>
                         <td>{crypto.id}</td>
                         <td>{crypto.current_price} €</td>
-                        <td>{crypto.market_cap_change_percentage_24h}</td>
-                        <td><CancelIcon fontSize="large" color="secondary"/></td>
-                        {/* { crypto.owned === '0' ?
-                        :
-                            <td>{crypto.owned}</td>
-                        } */}
+                        <td style={crypto.market_cap_change_percentage_24h >= 0 ? textGreen : textRed}>
+                            {crypto.market_cap_change_percentage_24h} %
+                        </td>
+
+                        { crypto.held && crypto.held > 0 
+                            ? <td>{crypto.held}</td>
+                            : <td><CancelIcon fontSize="large" color="secondary"/></td>
+                        }
                         <td>
                             <IconButton color="primary" aria-label="shop">
                                 <ShoppingCartIcon fontSize="large"/>

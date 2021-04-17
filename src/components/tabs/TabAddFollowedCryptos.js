@@ -9,6 +9,16 @@ export default function TabAddFollowedCryptos ({
 
     const cryptos = cryptosList ? cryptosList : [];
 
+    const textGreen = {
+        color:'#76cc4a',
+        fontWeight:'bold'
+    }
+
+    const textRed = {
+        color:'#db2b2b',
+        fontWeight:'bold'
+    }
+
     return (
         <table className="TabCryptos">
             <thead>
@@ -20,11 +30,13 @@ export default function TabAddFollowedCryptos ({
                 </tr>
             </thead>
             <tbody>
-                {cryptos.map((crypto) => (
-                    <tr>
+                {cryptos.map((crypto, id) => (
+                    <tr key={id}>
                         <td>{crypto.id}</td>
                         <td>{crypto.current_price} €</td>
-                        <td>{crypto.market_cap_change_percentage_24h} %</td>
+                        <td style={crypto.market_cap_change_percentage_24h >= 0 ? textGreen : textRed}>
+                            {crypto.market_cap_change_percentage_24h} %
+                        </td>
                         <td>
                             <IconButton color="primary" aria-label="shop" onClick={() => addCrypto(crypto.id)}>
                                 <AddCircleIcon fontSize="large"/>
