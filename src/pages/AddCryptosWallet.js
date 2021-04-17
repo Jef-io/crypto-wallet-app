@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { 
     getNotFollowedCryptos,
     followCrypto
-} from '../utils/followedCryptos'
+} from '../utils/cryptos'
 import BasicTextField from '../components/fields/TextField'
 
 
