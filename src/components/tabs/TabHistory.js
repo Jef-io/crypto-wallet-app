@@ -1,23 +1,8 @@
 import React from 'react';
 
-export default function TabCryptos () {
-
-    const deals = [
-        {
-            type:'vente',
-            date:'8/04/2021',
-            crypto:'BTC',
-            montant:'1',
-            euros:'58 000',
-        },
-        {
-            type:'achat',
-            date:'8/04/2021',
-            crypto:'DOGE',
-            montant:'1',
-            euros:'1000',
-        }
-    ]
+export default function TabCryptos ({
+    history
+}) {
 
     const textGreen = {
         color:'#76cc4a',
@@ -41,18 +26,16 @@ export default function TabCryptos () {
                 </tr>
             </thead>
             <tbody>
-                {deals.map((deal) => (
-                    <tr>
-                        { deal.type === 'vente' ?
-                            <td style={textGreen}>{deal.type}</td>
-                        : 
-                            <td style={textRed}>{deal.type}</td>
+                {history.map((deal, id) => (
+                    <tr key={id}>
+                        { deal.type === 'sell' 
+                            ? <td style={textGreen}>vente</td>
+                            : <td style={textRed}>achat</td>
                         }
-                        
-                        <td>{deal.date}</td>
-                        <td>{deal.crypto}</td>
-                        <td>{deal.montant}</td>
-                        <td>{deal.euros}</td>
+                        <td>{deal.date.replace(/T1|.000Z/gi, " ")}</td>
+                        <td>{deal.crypto_id}</td>
+                        <td>{deal.ammount}</td>
+                        <td>{deal.value} €</td>
                     </tr>
                 ))}
             </tbody>
