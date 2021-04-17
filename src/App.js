@@ -13,7 +13,7 @@ import History from './pages/History'
 import FollowedCryptos from './pages/FollowedCryptos'
 import Trading from './pages/Trading'
 import AddFollowedCryptos from './pages/AddFollowedCryptos'
-import AddCryptosWallet from './pages/AddCryptosWallet'
+import DeclareCryptosWallet from './pages/DeclareCryptosWallet'
 
 import { GreenRedTheme } from './css/CustomTheme';
 import { ThemeProvider } from '@material-ui/styles';
@@ -42,8 +42,8 @@ const App = () => {
                     <PrivateRoute path="/addfollowedcryptos">
                         <AddFollowedCryptos />
                     </PrivateRoute>
-                    <PrivateRoute path="/addcryptoswallet">
-                        <AddCryptosWallet />
+                    <PrivateRoute path="/declarecryptoswallet">
+                        <DeclareCryptosWallet />
                     </PrivateRoute>
                 </Switch>
             </Router>
