@@ -18,7 +18,14 @@ export default function Wallet () {
   const getWalletState = async () => {
     const result = await getWallet();
     setWallet(result);
-    console.log(result);
+  }
+
+  const getWalletSum = (wallet) => {
+    let sum = 0;
+    for (const crypto in wallet) {
+      sum += wallet[crypto].held * wallet[crypto].current_price;
+    }
+    return sum;
   }
 
   useEffect(() => {
@@ -30,7 +37,7 @@ export default function Wallet () {
         <header>
           <div>
             <label>Montant total du portefeuille en euros : </label>
-            <h4>110000000 €</h4>
+            <h4>{getWalletSum(wallet)} €</h4>
           </div>
           <Link to={'/addcryptoswallet'} className="Link">
             <CustomizedButton value="Ajouter une cryptomonnaie" color="blue"/>
