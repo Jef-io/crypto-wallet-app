@@ -1,5 +1,6 @@
 import {
     getRequest,
+    postRequest
 } from "./api"
 
 const getWallet = async () => {
@@ -11,6 +12,31 @@ const getWallet = async () => {
     }
 }
 
+
+const getNotPossessedCryptos = async () => {
+    try {
+        const result = await getRequest('cache/not/admin')
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
+
+const declareCryptoAmmount = async (id, ammount, value) => {
+    try {
+        const result = await postRequest('cache/store/admin', {
+            crypto_id: id,
+            ammount: ammount,
+            value: value
+        })
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
+
 export {
-    getWallet
+    getWallet,
+    getNotPossessedCryptos,
+    declareCryptoAmmount
 }

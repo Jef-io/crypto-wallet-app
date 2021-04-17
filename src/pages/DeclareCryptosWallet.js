@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import '../css/wallet.css';
 import Title from '../components/Title';
-import TabAddCryptosWallet from '../components/tabs/TabAddCryptosWallet';
+import TabDeclareCryptosWallet from '../components/tabs/TabDeclareCryptosWallet';
 import CustomizedButton from '../components/Button';
 import { Link } from 'react-router-dom';
-import { 
-    getNotFollowedCryptos,
-    followCrypto
-} from '../utils/cryptos'
-import BasicTextField from '../components/fields/TextField'
+import { getNotPossessedCryptos } from "../utils/wallet";
+import BasicTextField from '../components/fields/TextField';
+import { declareCryptoAmmount } from "../utils/wallet"
 
 
-const AddCryptosWallet = () => {
+const DeclareCryptosWallet = () => {
     
     const [cryptos, setCryptos] = useState([]);
     const [filteredCryptos, setFilteredCryptos] = useState([]);
     
     const fetchCryptos = async () => {
-        const result = await getNotFollowedCryptos();
+        const result = await getNotPossessedCryptos();
         setCryptos(result);
     }
 
@@ -32,8 +30,10 @@ const AddCryptosWallet = () => {
         setFilteredCryptos([...filteredCryptos]);
     }
 
-    const addCrypto = async (id) => {
-        await followCrypto(id);
+    const declareCrypto = async (id, ammount, value) => {
+        await declareCryptoAmmount(id, ammount, value);
+        setCryptos(crypto =>  crypto.filter(crypto => crypto.id !== id));
+        setFilteredCryptos(crypto => crypto.filter(crypto => crypto.id !== id))
     }
     
     return (
@@ -42,14 +42,17 @@ const AddCryptosWallet = () => {
                 <Link to={'/'} className="Link">
                     <CustomizedButton value="Retour" color="blue"/>
                 </Link>
-                <Title value="Ajouter une crypto" variant="1"/>
+                <Title value="Déclarer une crypto" variant="1"/>
                 <article>
                     <BasicTextField label='Rechercher...' className="SearchField" onChange={e => onUserSearch(e.target.value)} color="blue"/>
-                    <TabAddCryptosWallet cryptosList={filteredCryptos.length ? filteredCryptos : cryptos} addCrypto={id => addCrypto(id)}/>
+                    <TabDeclareCryptosWallet 
+                        cryptosList={filteredCryptos.length ? filteredCryptos : cryptos} 
+                        declare={(id, ammount, value) => declareCrypto(id, ammount, ammount*value)}
+                    />
                 </article>
             </section>
         </main>
     );
 }
 
-export default AddCryptosWallet;
+export default DeclareCryptosWallet;
