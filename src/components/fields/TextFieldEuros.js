@@ -8,7 +8,9 @@ import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
-export default function TextFieldEuros () {
+export default function TextFieldEuros ({
+    value
+}) {
 
     return (
         <ThemeProvider theme={BlueTheme}>
@@ -24,6 +26,7 @@ export default function TextFieldEuros () {
                         'aria-label': "valeur en euros",
                     }}
                     disabled
+                    value={value}
                 />
                 <FormHelperText id="outlined-helper-text">valeur en euros</FormHelperText>
             </FormControl>

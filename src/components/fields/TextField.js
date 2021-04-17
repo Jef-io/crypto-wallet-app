@@ -6,7 +6,7 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import { ThemeProvider } from '@material-ui/styles'
 import { BlueTheme } from '../../css/CustomTheme'
 
-export default function BasicTextField ({label, required, className, onChange, color, type, defaultValue}) {
+export default function BasicTextField ({label, required, className, onChange, color, type, defaultValue, value}) {
 
   const checkColor = color ? color : "primary" ;
   const checkClassName = className ? className : "Field" ;
@@ -27,6 +27,7 @@ export default function BasicTextField ({label, required, className, onChange, c
             defaultValue={defaultValue}
              // notched
             fullWidth="true"
+            value={value}
           />
           {label ?
             <FormHelperText id="outlined-helper-text">{label}</FormHelperText>
