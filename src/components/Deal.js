@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import TextFieldEuros from './fields/TextFieldEuros'
 import BasicTextField from './fields/TextField'
 import CustomizedButton from './Button'
-import FieldWithSuggestions from './fields/FieldWithSuggestions'
+import SelectField from './fields/SelectField';
 
-export default function Deal ({buttonName, buttonColor}) {
+export default function Deal ({buttonName, buttonColor, cryptos, isSelling, onValidation}) {
+    
+    const [crypto, setCrypto] = useState();
+    const [ammount, setAmmount] = useState(0)
+    const [value, setValue] = useState("")
+
+    const handleChange = (value) => {
+        if (isSelling ? value >= 0 && value <= cryptos.find(value => value.id === crypto).held : value >= 0) setAmmount(value)
+    }
+
+    useEffect(() => {
+        setValue(crypto ? cryptos.find(value => value.id === crypto).current_price*ammount : "");
+    }, [crypto, ammount, cryptos])
 
     return (
         <article>
             <form>
-                <FieldWithSuggestions 
-                    label="Crypto" 
-                    suggestions = {['BTC','DOGE']}
+                <SelectField label="Crypto" options={cryptos.map(crypto => crypto.id)} onChange={(e) => setCrypto(e.target.value)} />
+                <BasicTextField  
+                    label="Montant" type="number" 
+                    value={ammount} color="blue" 
+                    required onChange={(e) => handleChange(e.target.value)}
                 />
-                <BasicTextField label="Montant" type="number" defaultValue="1" color="blue" required/>
-                <TextFieldEuros/>
-                <CustomizedButton value={buttonName} color={buttonColor}/>
+                <TextFieldEuros value={value}/>
+                <CustomizedButton 
+                    value={buttonName} color={buttonColor} 
+                    isDisabled={!crypto || !ammount || parseInt(ammount) === 0}
+                    onClick={() => onValidation({
+                        crypto_id: crypto,
+                        ammount: ammount,
+                        value: value
+                    }, isSelling ? "sell" : "buy")}
+                />
             </form> 
         </article>
     );
