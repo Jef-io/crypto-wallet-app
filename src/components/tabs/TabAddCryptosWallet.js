@@ -21,8 +21,8 @@ export default function TabAddCryptosWallet ({
                 </tr>
             </thead>
             <tbody>
-                {cryptos.map((crypto) => (
-                    <tr>
+                {cryptos.map((crypto, id) => (
+                    <tr key={id}>
                         <td>{crypto.id}</td>
                         <td><BasicTextField type="number" defaultValue="1" required/></td>
                         <td>
