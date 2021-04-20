@@ -17,6 +17,7 @@ import DeclareCryptosWallet from './pages/DeclareCryptosWallet'
 
 import { GreenRedTheme } from './css/CustomTheme';
 import { ThemeProvider } from '@material-ui/styles';
+import CryptoDetails from './pages/CryptoDetails'
 
 const App = () => {
 
@@ -36,6 +37,9 @@ const App = () => {
                     <PrivateRoute path="/cryptos">
                         <FollowedCryptos />
                     </PrivateRoute>
+                    <PrivateRoute path="/crypto/:id">
+                        <CryptoDetails />
+                    </PrivateRoute>
                     <PrivateRoute path="/trading">
                         <Trading />
                     </PrivateRoute>
@@ -51,11 +55,11 @@ const App = () => {
     )
 }
 
-const PrivateRoute = ({children}) => {
+const PrivateRoute = ({children, path}) => {
     return (
         // sessionStorage.getItem('authorization') ?
         true ?
-        <Route>
+        <Route path={path}>
             <ThemeProvider theme={GreenRedTheme}>
                 <NavBar />
                 {children}

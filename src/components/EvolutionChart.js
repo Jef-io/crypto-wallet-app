@@ -11,17 +11,8 @@ import {
   Legend,
 } from '@devexpress/dx-react-chart-material-ui';
 import { ArgumentScale, Animation } from '@devexpress/dx-react-chart';
-import { curveCatmullRom, line } from 'd3-shape';
+import { curveMonotoneX, line } from 'd3-shape';
 import { scalePoint } from 'd3-scale';
-
-const values = [
-    {
-        date: 'hier', portefeuille: 60, doge: 582,
-    }, {
-        date: 'ajd', portefeuille: 30, btc: 300, doge: 800,
-    }, {
-        date: 'demain', portefeuille: 80, btc: 600, doge: 600,
-}];
 
 const legendStyles = theme => ({
 root: {
@@ -57,24 +48,40 @@ const Line = props => (
     path={line()
     .x(({ arg }) => arg)
     .y(({ val }) => val)
-    .curve(curveCatmullRom)}
+    .curve(curveMonotoneX)}
 />
 );
 
-const EvolutionChart = () => {
+const EvolutionChart = ({
+    cryptoData,
+    isCryptoHistory
+}) => {
 
-    const data = values
+    const mainCryptos = [
+        'bitcoin', 'dogecoin', 'ethereum', 'sushi'
+    ]
 
     return (
         <Paper>
-            <Chart data={data}>
+            <Chart data={cryptoData}>
                 <ArgumentScale factory={scalePoint} />
                 <ArgumentAxis />
                 <ValueAxis />
-
-                <LineSeries name="Portefeuille" valueField="portefeuille" argumentField="date" seriesComponent={Line}/>
-                <LineSeries name="BTC" valueField="btc" argumentField="date" seriesComponent={Line}/>
-                <LineSeries name="DOGE" valueField="doge" argumentField="date" seriesComponent={Line}/>
+                {
+                    isCryptoHistory
+                    ? <LineSeries name="Valeur €" valueField="price" argumentField="date" seriesComponent={Line}/> 
+                    : <LineSeries name="Portefeuille €" valueField="price" argumentField="date" seriesComponent={Line}/>
+                }
+                { !isCryptoHistory
+                    ? mainCryptos.map((crypto, id) =>
+                        <LineSeries key={id} name={crypto} valueField={crypto} argumentField="date" seriesComponent={Line}/>
+                    )
+                    : null
+                }
+                {/* <LineSeries name="BitCoin" valueField="bitcoin" argumentField="date" seriesComponent={Line}/> 
+                <LineSeries name="Eth" valueField="ethereum" argumentField="date" seriesComponent={Line}/> 
+                <LineSeries name="Doge" valueField="dogecoin" argumentField="date" seriesComponent={Line}/> 
+                <LineSeries name="Sushi" valueField="sushi" argumentField="date" seriesComponent={Line}/>  */}
                 
                 <Legend position="bottom" rootComponent={Root} itemComponent={Item} labelComponent={Label} />
                 <Animation />

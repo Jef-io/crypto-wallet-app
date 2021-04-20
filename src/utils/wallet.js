@@ -12,6 +12,15 @@ const getWallet = async () => {
     }
 }
 
+const getWalletEvolution = async () => {
+    try {
+        const result = await getRequest('cache/history/admin');
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
+
 
 const getNotPossessedCryptos = async () => {
     try {
@@ -37,6 +46,7 @@ const declareCryptoAmmount = async (id, ammount, value) => {
 
 export {
     getWallet,
+    getWalletEvolution,
     getNotPossessedCryptos,
     declareCryptoAmmount
 }

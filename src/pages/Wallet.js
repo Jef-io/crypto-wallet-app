@@ -8,16 +8,23 @@ import { Link } from 'react-router-dom';
 
 
 import {
-  getWallet
+  getWallet, getWalletEvolution
 } from "../utils/wallet"
+import { LinearProgress } from '@material-ui/core';
 
 export default function Wallet () {
 
   const [wallet, setWallet] = useState([])
+  const [evolution, setEvolution] = useState([])
 
   const getWalletState = async () => {
     const result = await getWallet();
     setWallet(result);
+  }
+
+  const getWalletEvolutionState = async () => {
+    const result = await getWalletEvolution();
+    setEvolution(result)
   }
 
   const getWalletSum = (wallet) => {
@@ -30,6 +37,7 @@ export default function Wallet () {
 
   useEffect(() => {
     getWalletState();
+    getWalletEvolutionState();
   }, [])
 
   return (
@@ -52,10 +60,14 @@ export default function Wallet () {
         <section className="WalletEvolution">
           <div>
             <Title value="Evolution" variant="2"/>
-            <Title value="30 derniers jours" variant="3" color="#db2b2b"/>
+            <Title value="portefeuille" variant="3" color="#db2b2b"/>
           </div>
           <article>
-              <EvolutionChart/>
+            {
+              evolution.length
+              ? <EvolutionChart cryptoData={evolution}/>
+              : <LinearProgress className="ProgressBar" color="primary" />
+            }
           </article>
         </section>
         

@@ -20,6 +20,8 @@ export default function TabWallet ({
             </thead>
             <tbody>
                 {wallet.map((crypto, id) => (
+                    crypto.held > 0 
+                    ?
                     <tr key={id}>
                         <td>{crypto.id}</td>
                         <td>{crypto.held}</td>
@@ -34,6 +36,7 @@ export default function TabWallet ({
                             </IconButton>
                         </td>
                     </tr>
+                    : null
                 ))}
             </tbody>
         </table>
