@@ -1,8 +1,10 @@
 import React from 'react';
-import IconButton from '@material-ui/core/IconButton'
+import IconButton from '../IconButton'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import DeleteIcon from '@material-ui/icons/Delete'
 import CancelIcon from '@material-ui/icons/Cancel';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import { Link } from 'react-router-dom';
 
 export default function TabFollowedCryptos ({
     cryptosList,
@@ -47,7 +49,12 @@ export default function TabFollowedCryptos ({
                             : <td><CancelIcon fontSize="large" color="secondary"/></td>
                         }
                         <td>
-                            <IconButton color="primary" aria-label="shop">
+                            <Link to={`/crypto/${crypto.id}`}>
+                                <IconButton color="blue" aria-label="shop" onClick={() => console.log(crypto.id)}>
+                                    <TrendingUpIcon fontSize="large"/>
+                                </IconButton>
+                            </Link>
+                            <IconButton color="primary" aria-label="shop" onClick={() => console.log(crypto.id)}>
                                 <ShoppingCartIcon fontSize="large"/>
                             </IconButton>
                             <IconButton color="secondary" aria-label="delete" onClick={() => unfollowCrypto(crypto.id)}>

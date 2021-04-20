@@ -13,6 +13,15 @@ const getCryptos = async () => {
     }
 }
 
+const getCryptoEvolution = async (id) => {
+    try {
+        const result = await getRequest(`coins/${id}/30`);
+        return result;
+    } catch (error) {
+        throw error;
+    }
+}
+
 const getFollowedCryptos = async () => {
     try {
         const result = await getRequest('follow/admin');
@@ -51,6 +60,7 @@ const unfollowCrypto = async (cryptoId) => {
 
 export {
     getCryptos,
+    getCryptoEvolution,
     getFollowedCryptos,
     getNotFollowedCryptos,
     followCrypto,

@@ -5,13 +5,15 @@ import IconButton from '@material-ui/core/IconButton'
 
 const CustomIconButton = ({
     children,
-    color
+    color,
+    onClick,
+    disabled
 }) => {
 
     return (
         color === "blue"
-        ? <ThemeProvider theme={BlueTheme}><IconButton color="primary">{children}</IconButton></ThemeProvider>
-        : <IconButton color={color}>{children}</IconButton>
+        ? <ThemeProvider theme={BlueTheme}><IconButton disabled={disabled} onClick={() => onClick()} color="primary">{children}</IconButton></ThemeProvider>
+        : <IconButton disabled={disabled} onClick={() => onClick()} color={color}>{children}</IconButton>
     )
 }
 
