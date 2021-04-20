@@ -11,7 +11,7 @@ const getRequest = async (route) => {
         return res.data;
     })
     .catch((e) => {
-        alert(e)
+        // alert(e)
         throw e;
     })
 }

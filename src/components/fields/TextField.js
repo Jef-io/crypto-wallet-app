@@ -26,7 +26,7 @@ export default function BasicTextField ({label, required, className, onChange, c
             type={type}
             defaultValue={defaultValue}
              // notched
-            fullWidth="true"
+            fullWidth
             value={value}
           />
           {label ?
@@ -47,7 +47,7 @@ export default function BasicTextField ({label, required, className, onChange, c
           type={type}
           defaultValue={defaultValue}
           // notched
-          fullWidth="true"
+          fullWidth
           value={value}
         />
         {
