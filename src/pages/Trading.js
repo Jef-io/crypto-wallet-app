@@ -11,8 +11,15 @@ export default function Trading () {
 
   const [wallet, setWallet] = useState([]);
   const [cryptos, setCryptos] = useState([]);
+  const [defaultCrypto, setDefaultCrypto] = useState({});
 
   const fetchData = async () => {
+    const defaultBuyCrypto = sessionStorage.getItem("buyCrypto")
+    const defaultSellCrypto = sessionStorage.getItem("sellCrypto")
+    setDefaultCrypto({buy: defaultBuyCrypto, sell: defaultSellCrypto})
+    sessionStorage.removeItem("buyCrypto");
+    sessionStorage.removeItem("sellCrypto");
+
     const walletData = await getWallet();
     const cryptosData = await getCryptos();
     setWallet(walletData);
@@ -60,6 +67,7 @@ export default function Trading () {
                 buttonName="Acheter" buttonColor="secondary" 
                 cryptos={cryptos} 
                 onValidation={(deal, type) => handleTransaction(deal, type)}
+                defaultCrypto={defaultCrypto.buy ? defaultCrypto.buy : null }
               />
             : <LinearProgress className="ProgressBar" color="primary" />
           }
@@ -72,6 +80,7 @@ export default function Trading () {
                 buttonName="Vendre" buttonColor="primary" 
                 cryptos={wallet} 
                 isSelling onValidation={(deal, type) => handleTransaction(deal, type)}
+                defaultCrypto={defaultCrypto.sell ? defaultCrypto.sell : null }
               />
             : <LinearProgress className="ProgressBar" color="primary" />
           }

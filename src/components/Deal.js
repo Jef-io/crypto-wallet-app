@@ -4,11 +4,18 @@ import BasicTextField from './fields/TextField'
 import CustomizedButton from './Button'
 import SelectField from './fields/SelectField';
 
-export default function Deal ({buttonName, buttonColor, cryptos, isSelling, onValidation}) {
+export default function Deal ({
+    buttonName, 
+    buttonColor, 
+    cryptos, 
+    isSelling, 
+    onValidation,
+    defaultCrypto
+}) {
     
     const [crypto, setCrypto] = useState();
-    const [ammount, setAmmount] = useState(0)
-    const [value, setValue] = useState("")
+    const [ammount, setAmmount] = useState(0);
+    const [value, setValue] = useState("");
 
     const handleChange = (value) => {
         if (isSelling && crypto
@@ -20,10 +27,11 @@ export default function Deal ({buttonName, buttonColor, cryptos, isSelling, onVa
         setValue(crypto ? cryptos.find(value => value.id === crypto).current_price*ammount : "");
     }, [crypto, ammount, cryptos])
 
+
     return (
         <article>
             <form>
-                <SelectField label="Crypto" options={cryptos.map(crypto => crypto.id)} onChange={(e) => setCrypto(e.target.value)} />
+                <SelectField defaultValue={defaultCrypto} label="Crypto" options={cryptos.map(crypto => crypto.id)} onChange={(e) => setCrypto(e.target.value)} />
                 <BasicTextField  
                     label="Montant" type="number" 
                     value={ammount} color="blue" 

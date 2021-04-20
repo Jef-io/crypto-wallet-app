@@ -23,6 +23,13 @@ export default function TabFollowedCryptos ({
         fontWeight:'bold'
     }
 
+    const tradeCrypto  = (id, heldAmmount) => {
+        if (heldAmmount > 0) {
+            sessionStorage.setItem("sellCrypto", id)
+        }
+        sessionStorage.setItem("buyCrypto", id)
+    }
+
     return (
         <table className="TabCryptos">
             <thead>
@@ -50,13 +57,15 @@ export default function TabFollowedCryptos ({
                         }
                         <td>
                             <Link to={`/crypto/${crypto.id}`}>
-                                <IconButton color="blue" aria-label="shop" onClick={() => console.log(crypto.id)}>
+                                <IconButton color="blue" aria-label="shop" onClick={null}>
                                     <TrendingUpIcon fontSize="large"/>
                                 </IconButton>
                             </Link>
-                            <IconButton color="primary" aria-label="shop" onClick={() => console.log(crypto.id)}>
-                                <ShoppingCartIcon fontSize="large"/>
-                            </IconButton>
+                            <Link to={`/trading`}>
+                                <IconButton color="primary" aria-label="shop" onClick={() => tradeCrypto(crypto.id, crypto.held)}>
+                                    <ShoppingCartIcon fontSize="large"/>
+                                </IconButton>
+                            </Link>
                             <IconButton color="secondary" aria-label="delete" onClick={() => unfollowCrypto(crypto.id)}>
                                 <DeleteIcon fontSize="large"/>
                             </IconButton>

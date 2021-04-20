@@ -1,13 +1,13 @@
 import React from "react";
+import FormHelperText from '@material-ui/core/FormHelperText';
 
-import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
 import { ThemeProvider } from '@material-ui/styles';
 import { BlueTheme } from '../../css/CustomTheme'
 
-export default function SelectField ({label, options, onChange}) {
+export default function SelectField ({label, options, onChange, defaultValue}) {
 
     const [state, setOption] = React.useState("");
 
@@ -24,20 +24,15 @@ export default function SelectField ({label, options, onChange}) {
                     color="primary"
                     value={state.option}
                     onChange={handleChange}
-                    label={label}
-                    inputProps={{
-                        name: {label},
-                        id: "select",
-                    }}
-                    disableUnderline
                     required
+                    defaultValue={defaultValue}
                 >
                     <option aria-label="None" value="" />
                     {options.map((option, id) => (
                             <option key={id} value={option}>{option}</option>
                     ))}
                 </Select>
-                <InputLabel htmlFor="select" color="primary">{label}</InputLabel>
+                <FormHelperText id="outlined-helper-text">valeur en euros</FormHelperText>
             </FormControl>
         </ThemeProvider>
     );
