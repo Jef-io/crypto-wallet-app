@@ -23,9 +23,12 @@ Dans cette version il n'y a qu'un seul compte (admin) et aucune authentification
 Vous pouvez suivre les 100 cryptos les plus populaires et voir un graphe de leur évolution.
 Il est également possible de déclarer posséder des cryptos, d'en acheter, vendre (si on en possède).
 
+Les informations sur les crypto monnaies proviennent de l'api coingecko
+
 Vous pourrez donc consulter vos possessions, voir votre historique et suivre l'évolution de votre portefeuille.
 
 ## Bugs
 
-Si les lignes du graphe d'évolution du portefeuille sont générées avec la réception des données, elles bouclent sur elles mêmes. Si ces lignes sont générées à partir d'un même tableau pré-existant, il n'y a aucun problème.
-Dans cette version, l'évolution de votre portefeuille n'affiche que la valeur globale, la valeur en bitcoin, ethereum, dogecoin et sushi.
+- Si les lignes du graphe d'évolution du portefeuille sont générées avec la réception des données, elles bouclent sur elles mêmes. Si ces lignes sont générées à partir d'un même tableau pré-existant, il n'y a aucun problème.
+Dans cette version, l'évolution de votre portefeuille n'affiche donc que la valeur globale, la valeur en bitcoin, ethereum, dogecoin et sushi.
+- Parfois, les requêtes qui incluent recevoir des informations de CoinGecko échouent (c'est un service gratuit faut pas abuser non plus), il faut donc recharger la page.
