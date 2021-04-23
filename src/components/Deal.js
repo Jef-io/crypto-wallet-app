@@ -21,11 +21,17 @@ export default function Deal ({
         if (isSelling && crypto
             ? value >= 0 && value <= cryptos.find(value => value.id === crypto).held 
             : value >= 0) setAmmount(value)
+            
     }
 
     useEffect(() => {
         setValue(crypto ? cryptos.find(value => value.id === crypto).current_price*ammount : "");
     }, [crypto, ammount, cryptos])
+
+    useEffect(() => {
+        setCrypto(defaultCrypto);
+    }, [])
+
 
 
     return (

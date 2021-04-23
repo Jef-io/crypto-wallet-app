@@ -31,9 +31,9 @@ const NavBar = () => {
 
     return (
         <nav className="NavBar">
-            <IconButton color="secondary" aria-label="logout">
+            {/* <IconButton color="secondary" aria-label="logout">
                 <PowerSettingsNewIcon fontSize="large"/>
-            </IconButton>
+            </IconButton> */}
             <div className="MenuItems">
                 {
                     routes.map((item, id) => 
